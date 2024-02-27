@@ -1,0 +1,69 @@
+﻿<Window x:Class="AGRM_CRM.Table_Managment_Windows.PaymentsWin.PaymentsWin_CR"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGRM_CRM.Table_Managment_Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Style="{DynamicResource WindowThemeLogin}"
+        Title="wareWin_CR" Height="650" Width="550" MinHeight="650" MinWidth="550" MaxHeight="650" MaxWidth="550">
+    <Window.Resources>
+        <Style TargetType="DataGridRow" x:Key="DGR">
+            <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Border Style="{DynamicResource BorderStyle}" MouseDown="Border_MouseDown" Height="30" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Выплата ЗП " Name="NameWin" Style="{DynamicResource TextBlockNameWinStyle}" VerticalAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="30">
+                    <Button x:Name="Close" Style="{DynamicResource ButCloseStyle}" Click="Close_Click" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <StackPanel Orientation="Horizontal" Margin="15 50 0 0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Text="ID:" Width="40" Height="30" Style="{DynamicResource Name_Subsection}"/>
+            <TextBox Name="ID" IsReadOnly="True" Style="{DynamicResource TexBoxStyle}" Width="100" Height="30" Margin="5 0 0 0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15 90 0 0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Text="Ответственный:" Style="{DynamicResource Name_Subsection}" Height="30" Width="185"/>
+            <ComboBox Name="Worker" Style="{DynamicResource ComboBoxStyle}" Template="{DynamicResource ComboBoxTemplate1}" Height="30" Width="325"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Margin="15 130 0 0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <TextBlock Text="Дата:" Style="{DynamicResource Name_Subsection}" Height="30" Width="65"/>
+            <DatePicker Name="Date" Style="{DynamicResource DatePickerStyle}" Height="30" Width="180"/>
+        </StackPanel>
+        
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="5 170 5 45" Height="345">
+            <Button Content="Добавить" Click="Add_Click" Style="{DynamicResource CreateButton}" Margin="5"/>
+            <DataGrid Name="Workers_subtable" RowStyle="{StaticResource DGR}" Style="{DynamicResource DataGridStyle}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" Margin="0" Height="295"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="15 525 0 0" Height="30">
+            <TextBlock Text="Количество:" Style="{DynamicResource Name_Subsection}" Width="145" Height="30"/>
+            <TextBox Name="Count" Style="{DynamicResource TexBoxStyle}" Width="200" Height="30" IsReadOnly="True"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="15 565 0 0" Height="30">
+            <TextBlock Text="Сумма:" Style="{DynamicResource Name_Subsection}" Width="85" Height="30"/>
+            <TextBox Name="Total" Style="{DynamicResource TexBoxStyle}" Width="200" Height="30" IsReadOnly="True"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 0 0">
+            <Button x:Name="Delete" FontSize="18" Content="Удалить" Width="125" Height="40" Style="{DynamicResource ButtonStyleDelete}" Cursor="Hand" Click="Delete_Click"/>
+            <Button x:Name="Save" FontSize="18" Margin="15 0 5 0" Content="Сохранить" Width="125" Height="40" Style="{DynamicResource ButtonStyleSave}" Click="Save_Click" IsDefault="True" Cursor="Hand"/>
+        </StackPanel>
+        
+        
+        <Border x:Name="BlackBackground" Background="#363636" Opacity="0.5" Visibility="Hidden"/>
+    </Grid>
+</Window>

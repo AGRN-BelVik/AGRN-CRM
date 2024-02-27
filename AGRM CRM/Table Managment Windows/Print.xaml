@@ -1,0 +1,29 @@
+﻿<Window x:Class="AGRM_CRM.Table_Managment_Windows.Print"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGRM_CRM.Table_Managment_Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:extensions="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Style="{DynamicResource WindowThemeLogin}"
+        Title="Print" Height="200" Width="450" MinHeight="200" MinWidth="450" MaxHeight="200" MaxWidth="450">
+    <Grid>
+        <Border Style="{DynamicResource BorderStyle}" MouseDown="Border_MouseDown" Height="30" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Печать " Name="NameWin" Style="{DynamicResource TextBlockNameWinStyle}" VerticalAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="30">
+                    <Button x:Name="Close" Style="{DynamicResource ButCloseStyle}" Click="Close_Click" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5 35 5 5">
+            <Button Name="PrintDocument" Style="{DynamicResource ButtonStyleSave}" Content="Как документ" Width="190" Height="150" Margin="5" Click="Print_Document"/>
+            <Button Name="PrintReceipt" Style="{DynamicResource ButtonStyleSave}" Content="Как чек" Width="190" Height="150" Margin="5" Click="Print_Receipt"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

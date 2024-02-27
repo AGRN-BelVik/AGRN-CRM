@@ -1,0 +1,45 @@
+﻿<Window x:Class="AGRM_CRM.Table_Managment_Windows.SalePricesWin_CR"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AGRM_CRM.Table_Managment_Windows"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Style="{DynamicResource WindowThemeLogin}"
+        Title="wareWin_CR" Height="250" Width="350" MinHeight="250" MinWidth="350" MaxHeight="250" MaxWidth="350"
+    xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+    <Grid>
+        <Border Style="{DynamicResource BorderStyle}" MouseDown="Border_MouseDown" Height="30" VerticalAlignment="Top">
+            <Grid>
+                <TextBlock Text="Цены продажи "  Name="NameWin" Style="{DynamicResource TextBlockNameWinStyle}" VerticalAlignment="Center"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Height="30">
+                    <Button x:Name="Close" Style="{DynamicResource ButCloseStyle}" Click="Close_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 50 0 0" Height="30">
+            <TextBlock Text="ID:" Margin="15 0 0 0" Width="40" Height="30" Style="{DynamicResource Name_Subsection}"/>
+            <TextBox Name="ID" IsReadOnly="True" Style="{DynamicResource TexBoxStyle}" Width="100" Height="30" Margin="5 0 0 0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 90 0 0" Height="30">
+            <TextBlock Text="Товар:" Margin="15 0 0 0" Width="75" Height="30" Style="{DynamicResource Name_Subsection}"/>
+            <ComboBox Name="Ware" Width="200" Height="30" Style="{DynamicResource ComboBoxStyle}" Template="{DynamicResource ComboBoxTemplate1}">
+                <ComboBoxItem Content="Не выбрано" Style="{DynamicResource ComboBoxItemStyle}" Visibility="Collapsed"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 130 0 0" Height="30">
+            <TextBlock Text="Цена:" Margin="15 0 0 0" Height="30" Width="70" Style="{DynamicResource Name_Subsection}"/>
+            <TextBox Name="Price" Width="200" Height="30" Style="{DynamicResource TexBoxStyle}" PreviewTextInput="Price_PreviewTextInput"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 0 0">
+            <Button x:Name="Delete" FontSize="18" Content="Удалить" Width="125" Height="40" Style="{DynamicResource ButtonStyleDelete}" Cursor="Hand" Click="Delete_Click"/>
+            <Button x:Name="Save" FontSize="18" Margin="15 0 5 0" Content="Сохранить" Width="125" Height="40" Style="{DynamicResource ButtonStyleSave}" Click="Save_Click" IsDefault="True" Cursor="Hand"/>
+        </StackPanel>
+    </Grid>
+</Window>
