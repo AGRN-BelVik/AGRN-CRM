@@ -14,9 +14,9 @@
     <Window.Resources>
         <Style TargetType="DataGridRow" x:Key="DGR">
             <EventSetter Event="MouseDoubleClick" Handler="DataGridRow_MouseDoubleClick"/>
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <!--<Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>-->
         </Style>
     </Window.Resources>
     <Grid>
